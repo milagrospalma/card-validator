@@ -1,0 +1,19 @@
+{
+  "name": "card-validator",
+  "version": "1.0.0",
+  "description": "librería para validar la tarjeta de crédito",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelynaPernia/card-validator.git"
+  },
+  "author": "Melyna Pernia y Milagros Palma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelynaPernia/card-validator/issues"
+  },
+  "homepage": "https://github.com/MelynaPernia/card-validator#readme"
+}
