@@ -1,0 +1,23 @@
+{
+  "name": "card-validator",
+  "version": "1.0.0",
+  "description": "validador de tarjeta de credito",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milagrospalma/card-validator.git"
+  },
+  "author": "Melyna Pernia y Milagros Palma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milagrospalma/card-validator/issues"
+  },
+  "homepage": "https://github.com/milagrospalma/card-validator#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
