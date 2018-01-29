@@ -1,6 +1,9 @@
 window.addEventListener('load', function() {
   var cn = document.getElementById('cn');
-  var pay = document.getElementById('pay');
+  // var name = document.getElementById('name');
+  // var cvv = document.getElementById('cvv');
+  var exp = document.getElementById('exp');
+  // var pay = document.getElementById('pay');
   var formCn = document.getElementById('fg-cn');
 
   cn.addEventListener('input', function() {
@@ -8,9 +11,9 @@ window.addEventListener('load', function() {
     isValidCard(cn.value);
   });
 
-  cvv.addEventListener('input', function() {
-    console.log(cvv.value);
-    isValidCvv(cvv.value);
+  exp.addEventListener('input', function() {
+    console.log(exp.value);
+    isValidExp(exp.value);
   });
 
   // Función para validar tarjeta
@@ -46,9 +49,6 @@ window.addEventListener('load', function() {
   };
 
   // Función para validar cvv
-  var isValidCvv = function(cvv) {
-    if (cvv.length === 3) {
-      console.log('longitud válida');
-    };
+  var isValidExp = function(exp) {
   };
 });
