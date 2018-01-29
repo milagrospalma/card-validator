@@ -10,9 +10,7 @@ window.addEventListener('load', function() {
 
   cvv.addEventListener('input', function() {
     console.log(cvv.value);
-  });
-
-  pay.addEventListener('click', function() {
+    isValidCvv(cvv.value);
   });
 
   // Función para validar tarjeta
@@ -47,4 +45,10 @@ window.addEventListener('load', function() {
     }
   };
 
+  // Función para validar cvv
+  var isValidCvv = function(cvv) {
+    if (cvv.length === 3) {
+      console.log('longitud válida');
+    };
+  };
 });
