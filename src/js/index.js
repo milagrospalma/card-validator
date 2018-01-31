@@ -53,16 +53,18 @@ window.addEventListener('load', function () {
   // Función para validar cvv
   
   var isValidCvv = function (event) {
-    var centinel = false;  
-    //const lengthDigit = 3;
-    if (event.target.value.length < 3) {
-      centinel = true;
-      
-    }else {
-      centinel = false;
+    var nodeNext = event.target.nextElementSibling;
+    var padre = event.target.parentElement;
+    console.log(event.target.parentElement); 
+    //var centinel = false;  
+    if (event.target.value.length === 3) {
+      //centinel = true; 
+      console.log(padre.className = 'form-group has-success has-feedback');
+      console.log(padre.className)
+      console.log(nodeNext.className='glyphicon glyphicon-ok form-control-feedback');             
+    } else {
+      console.log(nodeNext.className='glyphicon glyphicon-remove form-control-feedback');
     }
-    console.log(centinel)
-    return centinel;
   };
 
   //Función para ingresar solo letras
@@ -91,12 +93,8 @@ window.addEventListener('load', function () {
     }
     return centinel
   }
+
   cvv.onkeypress = isValidOnlyNumber;
   fgName.onkeypress = isValidOnlyLetter;
-  //cvv.onkeypress = isValidCvv;
-
   cvv.addEventListener('input', isValidCvv);
-
-
-
 });
