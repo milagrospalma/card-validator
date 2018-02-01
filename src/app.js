@@ -6,7 +6,7 @@ window.addEventListener('load',  () => {
   const formCn = document.getElementById('fg-cn');// Número de tarjeta
   const cvv = document.getElementById('fg-cvv'); //Código de verificación
   const fgName = document.getElementById('fg-name'); //Nombre completo
-  const fgExp = document.getElementById('fg-exp');
+  const fgExp = document.getElementById('fg-exp'); // Fecha Vencimiento
   const expInput = document.getElementById('exp');
   let arr = [];
 
@@ -96,8 +96,6 @@ window.addEventListener('load',  () => {
     text.lastChild.previousElementSibling.className = 'glyphicon glyphicon-remove form-control-feedback';
   }
 
-
-
   cn.addEventListener('input', () => {
     if(isValidCard(cn.value) && isValidLength(cn.value.length, 16)) {
       console.log('valida');
@@ -107,6 +105,7 @@ window.addEventListener('load',  () => {
       addClassInputWarning(formCn);
     }
   });
+
   cvvInput.addEventListener('input', ()=>{
   
     if(isValidLength(cvvInput.value.length, 3)) {
