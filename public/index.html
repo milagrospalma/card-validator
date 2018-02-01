@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Validación de Tarjeta de Crédito</title>
+  <!-- Import Bootstrap CSS -->
+  <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <form class="col-md-offset-4 col-md-4">
+        <div id="fg-cn" class="form-group">
+          <label for="cn">Número de tarjeta</label>
+          <input id="cn" name="cn" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="16" placeholder="1111-2222-3333-4444"
+            autofocus>
+          <!-- <span>Ingrese su número de tarjeta (16 dígitos)</span> -->
+        </div>
+        <div id="fg-name" class="form-group">
+          <label for="name">Nombre completo</label>
+          <input id="name" name="name" type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Nombres y Apellidos">
+        </div>
+        <div id="fg-cvv" class="form-group col-md-5">
+          <label for="cvv">CVV</label>
+          <input id="cvv" name="cvv" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="3" placeholder="000">
+          <!-- <span>El código de seguridad al reverso de la tarjeta (3 dígitos)</span> -->
+        </div>
+        <div id="fg-exp" class="form-group col-md-5">
+          <label for="exp">Fecha de vencimiento</label>
+          <input id="exp" name="exp" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="5" placeholder="MM/YY">
+        </div>
+        <button id="pay" type="button" class="btn btn-success col-md-12" disabled>Pagar</button>
+      </form>
+    </div>
+  </div>
+  <!-- Import jQuery -->
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <!-- Import Bootstrap JS -->
+  <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../src/app.js"></script>
+</body>
+
+</html>
