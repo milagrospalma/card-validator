@@ -16,8 +16,10 @@ A la hora de hacer las validaciones, la librería añade la clase `.has-error` a
 ## ¿Cómo trabajar con la librería?
 Para fines prácticos de la implementación, indicamos las sguientes instrucciones:
 1. Fork al [repositorio](https://github.com/milagrospalma/card-validator)
-2. Cada input valida, por lo que las validaciones se presentan en funciones para que solo las llame a las funciones cuando ocurre cierto evento. Un ejemplo de las funciones, es este bloque de código que corresponde a una función:
+2. Cada input valida, por lo que las validaciones se presentan en funciones para que solo las llame cuando ocurre cierto evento. Un ejemplo sería este bloque de código que corresponde a una función:
 ````
+  /*La función cardNumberLength tiene un parámetro de entrada inputValue*/
+  
   const cardNumberLength = inputValue => {
     if (inputValue.trim().length === 16) {
       return inputValue;
