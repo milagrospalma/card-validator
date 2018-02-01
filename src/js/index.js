@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
   var cn = document.getElementById('cn');
   var pay = document.getElementById('pay');
   var formCn = document.getElementById('fg-cn'); 
-  var cvv = document.getElementById('cvv'); //Código de verificación
+  var cvv = document.getElementById('fg-cvv'); //Código de verificación
   var fgName = document.getElementById('fg-name'); //Nombre completo
 
   cn.addEventListener('input', function () {
@@ -40,12 +40,13 @@ window.addEventListener('load', function () {
       sum += array[i];
     }
     if (sum % 10 === 0 && string.trim() !== '' && string.length === 16) {
-      formCn.removeClass = 'has-error';
-      formCn.className = 'has-success';
+        formCn.className = 'form-group has-success has-feedback';
+        formCn.lastChild.previousElementSibling.className = 'glyphicon glyphicon-ok form-control-feedback'
+      
       console.log('válida');
     } else {
-      formCn.removeName = 'has-success';
-      formCn.className = 'has-error';
+      formCn.className = 'form-group has-warning has-feedback';
+      formCn.lastChild.previousElementSibling.className = 'glyphicon glyphicon-remove form-control-feedback'
       console.log('inválida');
     }
   };
@@ -53,17 +54,20 @@ window.addEventListener('load', function () {
   // Función para validar cvv
   
   var isValidCvv = function (event) {
-    var nodeNext = event.target.nextElementSibling;
+    /*var nodeNext = event.target.nextElementSibling;
     var padre = event.target.parentElement;
-    console.log(event.target.parentElement); 
+    console.log(event.target.parentElement); */
     //var centinel = false;  
     if (event.target.value.length === 3) {
+      cvv.className = 'form-group has-success has-feedback';
+      cvv.lastChild.previousElementSibling.className = 'glyphicon glyphicon-ok form-control-feedback';
       //centinel = true; 
-      console.log(padre.className = 'form-group has-success has-feedback');
+      /*console.log(padre.className = 'form-group has-success has-feedback');
       console.log(padre.className)
-      console.log(nodeNext.className='glyphicon glyphicon-ok form-control-feedback');             
+      console.log(nodeNext.className='glyphicon glyphicon-ok form-control-feedback');            */ 
     } else {
-      console.log(nodeNext.className='glyphicon glyphicon-remove form-control-feedback');
+      cvv.className = 'form-group has-warning has-feedback';
+      cvv.lastChild.previousElementSibling.className = 'glyphicon glyphicon-remove form-control-feedback';
     }
   };
 
