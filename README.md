@@ -1,16 +1,32 @@
 # Validador de datos de Tarjetas de Crédito
+***
 
-## Objetivo
+## 1. Objetivo
 Implementar un validador de datos de tarjeta de crédito. La librería debería validar el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, codigo de verificación (cvv) y nombre completo que aparece en la tarjeta.
 
-## Descripción
+## 2. Organización
+Para la elaboración del presente proyecto se realizó la siguiente tabla donde definimos las actividades a realizar:
+
+| N°  | Actividad |
+| ---------- | ---------- |
+| 1 | Elegir el reto                                             |
+| 2 | Hacer fork del reto modelo                                 |
+| 3 | Estructurar el proyecto e instalar la herramienta babel    |
+| 4 | Investigar acerca de las librerías                         |
+| 5 | Realizar el diseño del formulario en el index              |
+| 6 | Programar la funcionalidad en la versión ES6 de javascript |
+
+
+## 3. Descripción
+
+
 El plugin debe recibir una referencia a un elemento del DOM que contenga
 `<input>`s con los siguientes nombres (atributo `name`):
 
-* `cn` (Card Number): El número de la tarjeta de crédito
-* `exp` (Expiry Date): Fecha de expiración
-* `cvv` (Card Verification Value): Código de validación de 3 dígitos
-* `name`: Nombre completo como aparece en la tarjeta
+* `cn` (Card Number): El número de la tarjeta de crédito.
+* `exp` (Expiry Date): Fecha de expiración.
+* `cvv` (Card Verification Value): Código de validación de 3 dígitos.
+* `name`: Nombre completo como aparece en la tarjeta.
 
 ## Ejemplo
 
@@ -52,6 +68,8 @@ form.addEventListener('submit', (e) => {
 A la hora de hacer las validaciones, la librería debería de añadir la clase
 `.error` a los `<input>`s que no pasen la validación, o la clase `.success`
 en caso de que sí pase.
+
+
 
 ## Vista demo
 ![Demo](src/assets/docs/demo.png)
