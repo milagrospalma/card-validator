@@ -1,54 +1,143 @@
-window.addEventListener('load', () => {
-  let inputCn = document.getElementById('cn');
-  var inputExp = document.getElementById('exp');
-  let formCn = document.getElementById('fg-cn');
+window.addEventListener('load',  () => {
+  const cn = document.getElementById('cn'); //
+  const cvvInput = document.getElementById('cvv');
+  const nameInput = document.getElementById('name');
+  const pay = document.getElementById('pay'); //
+  const formCn = document.getElementById('fg-cn');// Número de tarjeta
+  const cvv = document.getElementById('fg-cvv'); //Código de verificación
+  const fgName = document.getElementById('fg-name'); //Nombre completo
+  const fgExp = document.getElementById('fg-exp');
+  const expInput = document.getElementById('exp');
+  let arr = [];
 
-  inputCn.addEventListener('input', () => {
-    console.log(cn.value);
-    isValidCard(cn.value);
-  });
+  let getSumElementArray = (array)=>{
+   let suma = array.reduce((a, b) => parseInt(a) + parseInt(b));
+    return suma;
+  }
 
-  cvv.addEventListener('input', () => {
-    console.log(cvv.value);
-    isValidCvv(cvv.value);
-  });
-
-  // Función para validar tarjeta
-  let isValidCard = (string) => {
-    let array = [], sum = 0;
-    for (let i = 0; i < string.length; i++) {
-      array.push(parseInt(string[i]));
-    }
-    for (let i = 0; i < array.length; i++) {
-      if (i % 2 === 0) {
-        let value = array[i] * 2;
-        // Reemplaza los nuevos valores en la misma posición
-        array.splice(i, 1, value);
-        if (value >= 10) {
-          let strValue = value.toString();
-          let newNumber = parseInt(strValue[0]) + parseInt(strValue[1]);
-          // Reemplaza los nuevos valores en la misma posición
-          array.splice(i, 1, newNumber);
-        }
-      }
-      // Suma los elementos de la posición i
-      sum += array[i];
-    }
-    if (sum % 10 === 0 && string.trim() !== '' && string.length === 16) {
-      formCn.removeClass = 'has-error';
-      formCn.className = 'has-success';
-      console.log('válida');
+  let getSumDigitNumber = (num)=>{
+    let doubleNumber = num*2;
+    let sumDigit;
+    if(doubleNumber > 9){
+      sumDigit = getSumElementArray(doubleNumber.toString().split(''));
     } else {
-      formCn.removeName = 'has-success';
-      formCn.className = 'has-error';
-      console.log('inválida');
+      sumDigit = doubleNumber
     }
-  };
+    return sumDigit;
+  }
+ 
+  
+  let setElementArray = (element,index) => {
+    if((index+1)%2 !== 0){   
+      arr.push(getSumDigitNumber(parseInt(element)));
+    } else {
+      arr.push(parseInt(element));
+    }
+  }
 
-  // Función para validar cvv
-  let isValidCvv = (cvv) => {
-    if (cvv.length === 3) {
-      console.log('longitud válida');
-    };
-  };
+
+  let isValidCard = function(string){   
+    arr = []; 
+    let centinel = false;
+    let array = string.split('');   
+    array.forEach(setElementArray);
+    console.log(getSumElementArray(arr));
+    if (getSumElementArray(arr)%10 === 0){
+      centinel = true;
+    } else {
+      centinel = false;
+    }
+    return centinel;
+  }
+
+  let isValidLength = (text, lengthText) => {
+    let centinel = false;
+    if(text === lengthText){
+      centinel = true;
+    } else {
+      centinel = false;
+    }
+    return centinel;
+  } 
+
+ let isValidOnlyLetter = function(event) {
+    const patt = /^[a-zA-Z_áéíóúñ_ÁÉÍÓÚÑ\s]*$/;    
+    let result = patt.test(event.key);
+    let centinel = false;
+    if(result){
+      centinel = true
+    } else {
+      centinel = false
+    }
+    return centinel
+  }
+
+  let isValidOnlyNumber = function(event) {
+    const patt = /^[0-9]*$/;    
+    let result = patt.test(event.key);
+    let centinel = false;
+    if(result){
+      centinel = true
+    } else {
+      centinel = false
+    }
+    return centinel
+  }
+
+  let addClassInputCheck = (text) => {
+    text.className = 'form-group has-success has-feedback';
+    text.lastChild.previousElementSibling.className = 'glyphicon glyphicon-ok form-control-feedback';
+  }
+
+  let addClassInputWarning = (text) => {
+    
+    //console.log(event.lastChild.previousElementSibling.className);
+    text.className = 'form-group has-warning has-feedback';
+    text.lastChild.previousElementSibling.className = 'glyphicon glyphicon-remove form-control-feedback';
+  }
+
+
+
+  cn.addEventListener('input', () => {
+    if(isValidCard(cn.value) && isValidLength(cn.value.length, 16)) {
+      console.log('valida');
+      addClassInputCheck(formCn);
+    } else {
+      console.log('invalida');
+      addClassInputWarning(formCn);
+    }
+  });
+  cvvInput.addEventListener('input', ()=>{
+  
+    if(isValidLength(cvvInput.value.length, 3)) {
+      addClassInputCheck(cvv);
+    } else {
+      addClassInputWarning(cvv);
+    }
+    
+  });
+
+  nameInput.addEventListener('input', ()=>{
+  
+    if(!isValidLength(nameInput.value.length, 0)) {
+      addClassInputCheck(fgName);
+    } else {
+      addClassInputWarning(fgName);
+    }
+    
+  });
+
+  expInput.addEventListener('input', ()=>{  
+    if(isValidLength(expInput.value.length, 5)) {
+      addClassInputCheck(fgExp);
+    } else {
+      addClassInputWarning(fgExp);
+        }
+    
+  });
+
+  formCn.onkeypress = isValidOnlyNumber;
+  cvv.onkeypress = isValidOnlyNumber;
+  fgName.onkeypress = isValidOnlyLetter;
+ 
 });
