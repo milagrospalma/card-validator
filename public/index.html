@@ -8,33 +8,44 @@
   <title>Validación de Tarjeta de Crédito</title>
   <!-- Import Bootstrap CSS -->
   <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css">
+  <!--<link rel="stylesheet" href="css/main.css">-->
 </head>
 
 <body>
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Card-validator</a>
+        </div>
+      </div>
+    </nav>
+  </header>
   <div class="container">
     <div class="row">
       <form class="col-md-offset-4 col-md-4">
-        <div id="fg-cn" class="form-group">
-          <label for="cn">Número de tarjeta</label>
-          <input id="cn" name="cn" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="16" placeholder="1111-2222-3333-4444"
-            autofocus>
-          <!-- <span>Ingrese su número de tarjeta (16 dígitos)</span> -->
+        <div class="form-group has-warning has-feedback" id="fg-cn">
+          <label class="control-label" for="cn">Número de tarjeta</label>
+          <input type="text" class="form-control" id="cn" maxlength="16" placeholder="1111-2222-3333-4444" autofocus>
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
         </div>
-        <div id="fg-name" class="form-group">
-          <label for="name">Nombre completo</label>
-          <input id="name" name="name" type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Nombres y Apellidos">
+        <div class="form-group has-warning has-feedback" id="fg-cvv">
+          <label class="control-label" for="cvv">CVV</label>
+          <input type="text" class="form-control" id="cvv" maxlength="3" placeholder="000">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
         </div>
-        <div id="fg-cvv" class="form-group col-md-5">
-          <label for="cvv">CVV</label>
-          <input id="cvv" name="cvv" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="3" placeholder="000">
-          <!-- <span>El código de seguridad al reverso de la tarjeta (3 dígitos)</span> -->
+        <!--Nombre completo-->
+        <div class="form-group has-warning has-feedback" id="fg-name">
+          <label class="control-label" for="name">Nombre completo</label>
+          <input type="text" class="form-control" id="name" minlength="6" placeholder="Nombres y Apellidos">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
         </div>
-        <div id="fg-exp" class="form-group col-md-5">
-          <label for="exp">Fecha de vencimiento</label>
-          <input id="exp" name="exp" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="5" placeholder="MM/YY">
+        <div class="form-group has-warning has-feedback" id="fg-exp">
+          <label class="control-label" for="exp">Fecha de vencimiento</label>
+          <input type="text" class="form-control" id="exp" maxlength="5" placeholder="MM/YY">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
         </div>
-        <button id="pay" type="button" class="btn btn-success col-md-12" disabled>Pagar</button>
+        <button id="pay" type="button" class="btn btn-success col-md-12">Pagar</button>
       </form>
     </div>
   </div>

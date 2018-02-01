@@ -3,6 +3,18 @@
 ## ¿Qué es?
 Es una librería que valida el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, codigo de verificación (cvv) y nombre completo que aparece en la tarjeta.
 
+## ¿Cómo nos organizamos?
+Para la elaboración del presente proyecto se realizó la siguiente tabla donde definimos las actividades a realizar:
+
+| N°  | Actividad |
+| ---------- | ---------- |
+| 1 | Elegir el reto                                             |
+| 2 | Hacer fork del reto modelo                                 |
+| 3 | Estructurar el proyecto e instalar la herramienta babel    |
+| 4 | Investigar acerca de las librerías                         |
+| 5 | Realizar el diseño del formulario en el index              |
+| 6 | Programar la funcionalidad en la versión ES6 de javascript |
+
 ## ¿Cómo funciona la librería?
 La librería debe recibir una referencia a un elemento del DOM que contenga `<input>`s con los siguientes nombres (atributo `name`):
 
@@ -19,7 +31,7 @@ Para fines prácticos de la implementación, indicamos las sguientes instruccion
 2. Cada input valida, por lo que las validaciones se presentan en funciones para que solo las llame cuando ocurre cierto evento. Un ejemplo sería este bloque de código que corresponde a una función:
 ````
   /*La función cardNumberLength tiene un parámetro de entrada inputValue*/
-  
+
   const cardNumberLength = inputValue => {
     if (inputValue.trim().length === 16) {
       return inputValue;
