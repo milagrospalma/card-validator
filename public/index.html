@@ -8,60 +8,79 @@
   <title>Validación de Tarjeta de Crédito</title>
   <!-- Import Bootstrap CSS -->
   <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-  <!--<link rel="stylesheet" href="css/main.css">-->
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
   <header>
-      <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Page 1</a></li>
-              <li><a href="#">Page 2</a></li>
-              <li><a href="#">Page 3</a></li>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!--<a class="navbar-brand" href="#">card-validator</a>-->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span> 
+            </button>
+          <img src="./assets/image/img-tarjet.svg" alt="" height="40px">
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Docs</a></li>
+              <li><a href="https://github.com/milagrospalma/card-validator">GitHub</a></li>
             </ul>
           </div>
-        </nav>
+      </div>
+    </nav>
+    <div class="jumbotron text-center">
+      <h1>Card-validator.js</h1>
+      <p>Bienvenido puedes validar tu tarjeta de crédito!</p>
+      <img src="./assets/image/card-logo.svg" alt="" height="100px">
+    </div>
   </header>
   <div class="container">
     <div class="row">
-        <form class="col-md-offset-4 col-md-4">
-            <div class="form-group has-warning has-feedback" id="fg-cn">
-                <label class="control-label" for="cn">Número de tarjeta</label>
-                <input type="text" class="form-control" id="cn" maxlength="16" placeholder="1111-2222-3333-4444" autofocus>
-                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-               </div>
-           <div class="form-group has-warning has-feedback" id="fg-cvv">
-            <label class="control-label" for="cvv">CVV</label>
-            <input type="text" class="form-control" id="cvv" maxlength="3" placeholder="000">
-            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-           </div>
-           <!--Nombre completo-->
-           <div class="form-group has-warning has-feedback" id="fg-name">
-              <label class="control-label" for="name">Nombre completo</label>
-              <input type="text" class="form-control" id="name" minlength="6" placeholder="Nombres y Apellidos">
-              <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-             </div>
-             <div class="form-group has-warning has-feedback" id="fg-exp">
-                <label class="control-label" for="exp">Fecha de vencimiento</label>
-                <input type="text" class="form-control" id="exp" maxlength="5" placeholder="MM/YY">
-                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-               </div>
-         
-          <button id="pay" type="button" class="btn btn-success col-md-12">Pagar</button>
-        </form>
+      <form class="col-md-offset-4 col-md-4">
+        <p>Ejemplo como utilizarlo</p>
+        <div class="form-group has-warning has-feedback" id="fg-cn">
+          <label class="control-label" for="cn">Número de tarjeta</label>
+          <input type="text" class="form-control" id="cn" maxlength="16" placeholder="1111-2222-3333-4444" autofocus>
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+        <div class="form-group has-warning has-feedback" id="fg-cvv">
+          <label class="control-label" for="cvv">CVV</label>
+          <input type="text" class="form-control" id="cvv" maxlength="3" placeholder="000">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+        <!--Nombre completo-->
+        <div class="form-group has-warning has-feedback" id="fg-name">
+          <label class="control-label" for="name">Nombre completo</label>
+          <input type="text" class="form-control" id="name" minlength="6" placeholder="Nombres y Apellidos">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+        <div class="form-group has-warning has-feedback" id="fg-exp">
+          <label class="control-label" for="exp">Fecha de vencimiento</label>
+          <input type="text" class="form-control" id="exp" maxlength="5" placeholder="MM/YY">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+
+        <button id="pay" type="button" class="btn btn-success col-md-12">Pagar</button>
+      </form>
 
     </div>
   </div>
+
+  <footer>
+    <div class="container">
+      <p>Footer</p>
+    </div>
+  </footer>
   <!-- Import jQuery -->
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
   <!-- Import Bootstrap JS -->
   <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../src/app.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 
 </html>

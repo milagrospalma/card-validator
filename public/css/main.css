@@ -1,12 +1,18 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
+.navbar {
+  margin-bottom: 0;
+  background: #ececec;
+  /*color: #fff!important;*/
 }
-  
-body {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
+
+.navbar navbar-brand {
+  color: white;
+}
+.jumbotron {
+  background: #1D3453;
+  color:  #fff;
+}
+footer {
+  background: #e2e1e1;
+  margin-top: 5vh;
+  padding: 2vh;
 }
