@@ -1,43 +1,51 @@
 window.addEventListener('load', () => {
   let inputCn = document.getElementById('cn');
+  let inputName = document.getElementById('name');
+  let inputCvv = document.getElementById('cvv');
   let inputExp = document.getElementById('exp');
   let formCn = document.getElementById('fg-cn');
-  var pay = document.getElementById('pay');
-  var cvv = document.getElementById('cvv'); //Código de verificación
-  var fgName = document.getElementById('fg-name'); //Nombre completo
+  let pay = document.getElementById('pay');
 
+  // Eventos para los inputs
   inputCn.addEventListener('input', () => {
-    console.log(cn.value);
-    isValidCard(cn.value);
+    onlyNumbers(inputCn.value);
+    console.log(inputCn.value);
   });
 
-  cvv.addEventListener('input', () => {
-    console.log(cvv.value);
-    isValidCvv(cvv.value);
+  inputName.addEventListener('input', () => {
+    console.log(inputName.value);
   });
-  
-  // Función para validar tarjeta
-  let isValidCard = (string) => {
+
+  inputCvv.addEventListener('input', () => {
+    onlyNumbers(inputCvv.value);
+    
+    console.log(inputCvv.value);
+  });
+
+  inputExp.addEventListener('input', () => {
+    onlyNumbers(inputCvv.value);
+    console.log(inputExp.value);
+  });
+
+  // Función para validar número de tarjeta
+  const isValidCard = inputValue => {
     let array = [], sum = 0;
-    for (let i = 0; i < string.length; i++) {
-      array.push(parseInt(string[i]));
+    for (let i = 0; i < inputValue.length; i++) {
+      array.push(parseInt(inputValue[i]));
     }
     for (let i = 0; i < array.length; i++) {
       if (i % 2 === 0) {
         let value = array[i] * 2;
-        // Reemplaza los nuevos valores en la misma posición
         array.splice(i, 1, value);
         if (value >= 10) {
           let strValue = value.toString();
           let newNumber = parseInt(strValue[0]) + parseInt(strValue[1]);
-          // Reemplaza los nuevos valores en la misma posición
           array.splice(i, 1, newNumber);
         }
       }
-      // Suma los elementos de la posición i
       sum += array[i];
     }
-    if (sum % 10 === 0 && string.trim() !== '' && string.length === 16) {
+    if (sum % 10 === 0) {
       formCn.removeClass = 'has-error';
       formCn.className = 'has-success';
       console.log('válida');
@@ -49,48 +57,58 @@ window.addEventListener('load', () => {
   };
 
   // Función para validar cvv
-  var isValidCvv = function (event) {
-    var centinel = false;  
-    //const lengthDigit = 3;
+  const isValidCvv = (event) => {
+    let centinel = false;  
+    // const lengthDigit = 3;
     if (event.target.value.length < 3) {
       centinel = true;
-      
-    }else {
+    } else {
       centinel = false;
     }
-    console.log(centinel)
+    console.log(centinel);
     return centinel;
   };
 
-  //Función para ingresar solo letras
-  var isValidOnlyLetter = function(event) {
-    var patt = /^[a-zA-Z_áéíóúñ_ÁÉÍÓÚÑ\s]*$/;    
-    var result = patt.test(event.key);
-    var centinel = false;
-    if(result){
-      return event
-    } else {
-      centinel = false
+  // Función para validar longitud del número de tarjeta
+  const cardNumberLength = inputValue => {
+    if (inputValue.trim().length === 16) {
+      return inputValue;
     }
-    return centinel
-  }
-
-  // Función para ingresar solo numeros
-  var isValidOnlyNumber = function(event) {
-    var patt = /^[0-9]*$/;    
-    var result = patt.test(event.key);
-    var centinel = false;
-   // console.log(result);
-    if(result){
-      return event
+  };
+  // Función para ingresar solo letras
+  const onlyLetters = (event) => {
+    let patt = /^[a-zA-Z_áéíóúñ_ÁÉÍÓÚÑ\s]*$/;    
+    let result = patt.test(event.key);
+    let centinel = false;
+    if (result) {
+      return event;
     } else {
-      centinel = false
+      centinel = false;
     }
-    return centinel
-  }
-  cvv.onkeypress = isValidOnlyNumber;
-  fgName.onkeypress = isValidOnlyLetter;
-  //cvv.onkeypress = isValidCvv;
+    return centinel;
+  };
 
-  // cvv.addEventListener('input', isValidCvv);
+  // Función para ingresar solo números
+  const onlyNumbers = (event) => {
+    let patt = /^[0-9]*$/;    
+    let result = patt.test(event.key);
+    let centinel = false;
+    if (result) {
+      return event;
+    } else {
+      centinel = false;
+    }
+    return centinel;
+  };
+
+  // const form = document.querySelector('form');
+
+  // form.addEventListener('submit', (e) => {
+  //   e.preventDefault();
+  //   if (validateCardDetails(form)) {
+  //     console.log('datos válido... enviar...');
+  //   } else {
+  //     console.log('datos inválidos');
+  //   }
+  // });
 });
