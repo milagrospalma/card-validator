@@ -1,41 +1,44 @@
 body{
   font-family: 'Montserrat', sans-serif;
 }
+
 .mg-5{
   margin: 5vh;
 }
 
 .navbar {
-  margin-bottom: 0;
   background: #ececec;
-  /*color: #fff!important;*/
+  margin-bottom: 0;
 }
 
 .navbar navbar-brand {
-  color: white;
+  color: #ffffff;
 }
+
 .jumbotron {
   background: #1D3453;
-  color:  #fff;
+  color:  #ffffff;
 }
+
 .text-size-version {
   font-size: 30px;
 }
 
 .panel a {
-  text-decoration: none;
-  color:#fff;
+  color:#ffffff;
+  text-decoration: none; 
 }
 
 form {
   border: 1px solid #dddddd;
   box-shadow: 2px 3px 3px rgb(184, 182, 182);
-  padding: 2vh;
-  
+  padding: 2vh;  
 }
+
 .line-height {
   line-height: 2
 }
+
 footer {
   background: #e2e1e1;
   margin-top: 5vh;
