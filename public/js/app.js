@@ -1,14 +1,14 @@
 'use strict';
 
 window.addEventListener('load', function () {
-  var cn = document.getElementById('cn'); //
+  var cn = document.getElementById('cn');
   var cvvInput = document.getElementById('cvv');
   var nameInput = document.getElementById('name');
-  var pay = document.getElementById('pay'); //
-  var formCn = document.getElementById('fg-cn'); // Número de tarjeta
-  var cvv = document.getElementById('fg-cvv'); // Código de verificación
-  var fgName = document.getElementById('fg-name'); // Nombre completo
-  var fgExp = document.getElementById('fg-exp'); // Fecha Vencimiento
+  var pay = document.getElementById('pay');
+  var formCn = document.getElementById('fg-cn');
+  var cvv = document.getElementById('fg-cvv');
+  var fgName = document.getElementById('fg-name');
+  var fgExp = document.getElementById('fg-exp');
   var expInput = document.getElementById('exp');
   var arr = [];
 
