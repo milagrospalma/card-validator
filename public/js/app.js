@@ -1,6 +1,6 @@
 'use strict';
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
   var cn = document.getElementById('cn');
   var cvvInput = document.getElementById('cvv');
   var nameInput = document.getElementById('name');
@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
   var arr = [];
 
   var getSumElementArray = function getSumElementArray(array) {
-    var suma = array.reduce(function (a, b) {
+    var suma = array.reduce(function(a, b) {
       return parseInt(a) + parseInt(b);
     });
     return suma;
@@ -86,6 +86,15 @@ window.addEventListener('load', function () {
     return centinel;
   };
 
+  var validateMMYY = function(string) {
+    var reg = new RegExp('(((0[123456789]|10|11|12)/(18|19|(2[0-9]))))');
+    if (reg.test(string)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   var addClassInputCheck = function addClassInputCheck(text) {
     text.className = 'form-group has-success has-feedback';
     text.lastChild.previousElementSibling.className = 'glyphicon glyphicon-ok form-control-feedback';
@@ -96,7 +105,7 @@ window.addEventListener('load', function () {
     text.lastChild.previousElementSibling.className = 'glyphicon glyphicon-remove form-control-feedback';
   };
 
-  cn.addEventListener('input', function () {
+  cn.addEventListener('input', function() {
     if (isValidCard(cn.value) && isValidLength(cn.value.length, 16)) {
       console.log('valida');
       addClassInputCheck(formCn);
@@ -106,7 +115,7 @@ window.addEventListener('load', function () {
     }
   });
 
-  cvvInput.addEventListener('input', function () {
+  cvvInput.addEventListener('input', function() {
     if (isValidLength(cvvInput.value.length, 3)) {
       addClassInputCheck(cvv);
     } else {
@@ -114,7 +123,7 @@ window.addEventListener('load', function () {
     }
   });
 
-  nameInput.addEventListener('input', function () {
+  nameInput.addEventListener('input', function() {
     if (!isValidLength(nameInput.value.length, 0)) {
       addClassInputCheck(fgName);
     } else {
@@ -122,8 +131,14 @@ window.addEventListener('load', function () {
     }
   });
 
-  expInput.addEventListener('input', function () {
-    if (isValidLength(expInput.value.length, 5)) {
+  expInput.addEventListener('input', function() {
+    if (isValidLength(expInput.value.length, 2)) {
+      expInput.value = expInput.value + '/';
+    }
+    // if (isValidLength(expInput.value.length, 3)) {
+    //   expInput.value = expInput.value.slice(0, -1);
+    // }
+    if (validateMMYY(expInput.value)) {
       addClassInputCheck(fgExp);
     } else {
       addClassInputWarning(fgExp);
@@ -132,5 +147,6 @@ window.addEventListener('load', function () {
 
   formCn.onkeypress = isValidOnlyNumber;
   cvv.onkeypress = isValidOnlyNumber;
+  expInput.onkeypress = isValidOnlyNumber;
   fgName.onkeypress = isValidOnlyLetter;
 });

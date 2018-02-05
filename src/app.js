@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
       arr.push(parseInt(element));
   };
 
-  let isValidCard = function(string) {
+  let isValidCard = (string) => {
     arr = [];
     let centinel = false;
     let array = string.split('');
@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
     return centinel;
   };
 
-  let isValidOnlyLetter = function(event) {
+  let isValidOnlyLetter = (event) => {
     const patt = /^[a-zA-Z_áéíóúñ_ÁÉÍÓÚÑ\s]*$/;
     let result = patt.test(event.key);
     let centinel = false;
@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
     return centinel;
   };
 
-  let isValidOnlyNumber = function(event) {
+  let isValidOnlyNumber = (event) => {
     const patt = /^[0-9]*$/;
     let result = patt.test(event.key);
     let centinel = false;
@@ -74,6 +74,15 @@ window.addEventListener('load', () => {
     else
       centinel = false;
     return centinel;
+  };
+
+  let validateMMYY = (string) => {
+    const reg = new RegExp('(((0[123456789]|10|11|12)/(18|19|(2[0-9]))))');
+    if (reg.test(string)) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   let addClassInputCheck = (text) => {
@@ -108,13 +117,18 @@ window.addEventListener('load', () => {
   });
 
   expInput.addEventListener('input', ()=> {
-    if (isValidLength(expInput.value.length, 5)) 
+    if (isValidLength(expInput.value.length, 2)) {
+      expInput.value = expInput.value + '/';
+    }
+    if (validateMMYY(expInput.value)) {
       addClassInputCheck(fgExp);
-    else
+    } else {
       addClassInputWarning(fgExp);
+    };
   });
 
   formCn.onkeypress = isValidOnlyNumber;
   cvv.onkeypress = isValidOnlyNumber;
+  expInput.onkeypress = isValidOnlyNumber;
   fgName.onkeypress = isValidOnlyLetter;
 });
