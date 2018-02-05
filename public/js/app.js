@@ -4,12 +4,12 @@ window.addEventListener('load', function() {
   var cn = document.getElementById('cn');
   var cvvInput = document.getElementById('cvv');
   var nameInput = document.getElementById('name');
+  var expInput = document.getElementById('exp');
   var pay = document.getElementById('pay');
   var formCn = document.getElementById('fg-cn');
   var cvv = document.getElementById('fg-cvv');
   var fgName = document.getElementById('fg-name');
   var fgExp = document.getElementById('fg-exp');
-  var expInput = document.getElementById('exp');
   var arr = [];
 
   var getSumElementArray = function getSumElementArray(array) {
@@ -134,10 +134,7 @@ window.addEventListener('load', function() {
   expInput.addEventListener('input', function() {
     if (isValidLength(expInput.value.length, 2)) {
       expInput.value = expInput.value + '/';
-    }
-    // if (isValidLength(expInput.value.length, 3)) {
-    //   expInput.value = expInput.value.slice(0, -1);
-    // }
+    } 
     if (validateMMYY(expInput.value)) {
       addClassInputCheck(fgExp);
     } else {

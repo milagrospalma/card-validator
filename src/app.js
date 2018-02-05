@@ -1,13 +1,13 @@
 window.addEventListener('load', () => {
-  const cn = document.getElementById('cn'); //
+  const cn = document.getElementById('cn');
   const cvvInput = document.getElementById('cvv');
   const nameInput = document.getElementById('name');
-  const pay = document.getElementById('pay'); //
-  const formCn = document.getElementById('fg-cn');// Número de tarjeta
-  const cvv = document.getElementById('fg-cvv'); // Código de verificación
-  const fgName = document.getElementById('fg-name'); // Nombre completo
-  const fgExp = document.getElementById('fg-exp'); // Fecha Vencimiento
   const expInput = document.getElementById('exp');
+  const pay = document.getElementById('pay');
+  const formCn = document.getElementById('fg-cn');
+  const cvv = document.getElementById('fg-cvv');
+  const fgName = document.getElementById('fg-name');
+  const fgExp = document.getElementById('fg-exp');
   let arr = [];
 
   let getSumElementArray = (array)=> {
