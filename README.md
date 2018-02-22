@@ -1,8 +1,9 @@
+# Card Validator
+Valida datos como el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, codigo de verificación (cvv) y nombre completo que aparece en la tarjeta.
 
-# Validador de datos de Tarjeta de Crédito
-+ __Integrantes:__ *Melyna Pernia y Milagros Palma*
-## ¿Qué es?
-Es una librería que valida el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, codigo de verificación (cvv) y nombre completo que aparece en la tarjeta.
+![Vista Desktop](https://fotos.subefotos.com/942f349d7db0839ffa7607f2d2a0906bo.png)
+
+## Desarrollado para [Laboratoria](http://laboratoria.la)
 
 ## ¿Cómo nos organizamos?
 Para la elaboración del presente proyecto se realizó la siguiente tabla donde definimos las actividades a realizar:
@@ -43,10 +44,10 @@ Para fines prácticos de la implementación, indicamos las sguientes instruccion
 4. Tener en cuenta el Framework que se use. para este demo usamos Bootsrtap, que ya cuenta con las clases `.has-error` y
 `.has-success`.
 
-
-
-## Vista demo
+## Demo
 ![Demo](public/assets/docs/demo.png)
 
 ## Herramientas
-`HTML5` `CSS3` `JavaScript` `jQuery` `Bootstrap`
+`HTML5` `CSS3` `JavaScript` `ECMAScript 6` `babel` `node.js` `Bootstrap`
+
+### Desarrollado por Melyna Pernia y Milagros Palma
