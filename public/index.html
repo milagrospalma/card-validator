@@ -1,135 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Validación de Tarjeta de Crédito</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <!-- Import Bootstrap CSS -->
   <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
-  <header>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <!--<a class="navbar-brand" href="#">card-validator</a>-->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <img src="./assets/image/img-tarjet.svg" alt="logo" height="40px" width="30%">
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="#container">Docs</a>
-            </li>
-            <li>
-              <a href="https://github.com/milagrospalma/card-validator">GitHub</a>
-            </li>
-          </ul>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img class="logo" src="./assets/image/img-tarjet.svg" alt="logo">
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="#container">Demo</a>
+          </li>
+          <li>
+            <a href="https://github.com/milagrospalma/card-validator">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="jumbotron text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <img class="logo-header" src="./assets/image/card-logo.svg" alt="logo-header">
+          <h1>Card-validator.js
+            <span class="text-size-version">1.0.0</span>
+          </h1>
+          <h4>Valida número de tarjeta, código de verificación, nombre completo y fecha de vencimiento de una tarjeta de crédito</h4>
         </div>
       </div>
-    </nav>
-    <div class="jumbotron text-center">
-      <img src="./assets/image/card-logo.svg" alt="image-logo" height="150px">
-      <h1>Card-validator.js
-        <span class="text-size-version">1.0.0</span>
-      </h1>
-      <p>Valida el número de tarjeta, el código de verificación, el nombre completo y la fecha de vencimiento en JavaScript</p>
     </div>
   </header>
-  <section>
+  <section class="text-center">
     <div class="container">
       <div class="row">
         <div class="col-md-offset-4 col-md-4">
-          <h2><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download</h2>
+          <h3><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Descarga</h3>
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <a href="https://raw.githubusercontent.com/milagrospalma/card-validator/master/public/js/app.js" Download>card-validator.js</a>
+              <h4><strong>card-validator.js</strong></h4>
             </div>
-            <div class="panel-body">card-validator.js 3.7k</div>
+            <div class="panel-body">
+              <a class="library" href="https://raw.githubusercontent.com/milagrospalma/card-validator/master/public/js/app.js" download>card-validator.js 3.7k</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <div id="container" class="container">
-    <div class="row">
-      <h2 class="text-center mg-5">¿Cómo utilizarlo?</h2>
-      <div class="col-md-offset-1 col-md-4 line-height">
-        <p class="text-justify">La librería valida el número de tarjeta de crédito (usando algoritmo de Luhn), el código de verificación (cvv), nombre
-          completo y la fecha de vencimiento que aparece en la tarjeta.</p>
-
-        <h3>Ejemplo: </h3>
-        <p class="text-justify"> El siguiente fórmulario valida toda la infomación anteriormente mencionada. Como un pequeño ejemplo ingresa los siguientes
-          datos:</p>
-        <ul>
-          <li>
-            <strong>Número tarjeta:</strong> 4336282052012581</li>
-          <li>
-            <strong>Nombre Completo:</strong> Astrid Benites</li>
-          <li>
-            <strong>Código verificación:</strong> 569</li>
-          <li>
-            <strong>Fecha vencimiento:</strong> 05/21</li>
-        </ul>
-
+  <section class="vh85">
+    <div id="container" class="container">
+      <div class="row">
+        <h2 class="text-center mg-5">¿Cómo utilizarlo?</h2>
+        <div class="col-md-offset-1 col-md-4 line-height text-justify">
+          <p>La librería valida el número de tarjeta de crédito (usando algoritmo de Luhn), el código de verificación (CVV), nombre
+            completo y la fecha de vencimiento que aparece en la tarjeta.</p>
+          <h3>Ejemplo:</h3>
+          <p>
+            El siguiente fórmulario, valida toda la infomación anteriormente mencionada. Como un pequeño ejemplo ingresa los siguientes
+            datos:
+            <br>
+            <strong>- Número tarjeta:</strong> 4336282052012581
+            <br>
+            <strong>- Nombre Completo:</strong> Astrid Benites
+            <br>
+            <strong>- Código verificación:</strong> 569
+            <br>
+            <strong>- Fecha vencimiento:</strong> 05/21
+          </p>
+        </div>
+        <form class="col-md-offset-2 col-md-4">
+          <h4 class="text-center">Demo</h4>
+          <div class="form-group has-warning has-feedback" id="fg-cn">
+            <label class="control-label" for="cn">Número de tarjeta</label>
+            <input type="text" class="form-control" id="cn" maxlength="16" placeholder="1111-2222-3333-4444">
+            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <div class="form-group has-warning has-feedback" id="fg-cvv">
+            <label class="control-label" for="cvv">Código de seguridad (CVV)</label>
+            <input type="text" class="form-control" id="cvv" maxlength="3" placeholder="000">
+            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <div class="form-group has-warning has-feedback" id="fg-name">
+            <label class="control-label" for="name">Nombre completo</label>
+            <input type="text" class="form-control" id="name" minlength="6" placeholder="Nombres y Apellidos">
+            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <div class="form-group has-warning has-feedback" id="fg-exp">
+            <label class="control-label" for="exp">Fecha de expiración</label>
+            <input type="text" class="form-control" id="exp" maxlength="5" placeholder="MM/AA">
+            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <button id="pay" type="button" class="btn btn-success col-md-12">Pagar</button>
+        </form>
       </div>
-      <form class="col-md-offset-2 col-md-4">
-        <h4 class="text-center">Demo</h4>
-        <div class="form-group has-warning has-feedback" id="fg-cn">
-          <label class="control-label" for="cn">Número de tarjeta</label>
-          <input type="text" class="form-control" id="cn" maxlength="16" placeholder="1111-2222-3333-4444" autofocus>
-          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-        </div>
-        <div class="form-group has-warning has-feedback" id="fg-cvv">
-          <label class="control-label" for="cvv">Código de seguridad (CVV)</label>
-          <input type="text" class="form-control" id="cvv" maxlength="3" placeholder="000">
-          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-        </div>
-        <!--Nombre completo-->
-        <div class="form-group has-warning has-feedback" id="fg-name">
-          <label class="control-label" for="name">Nombre completo</label>
-          <input type="text" class="form-control" id="name" minlength="6" placeholder="Nombres y Apellidos">
-          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-        </div>
-        <div class="form-group has-warning has-feedback" id="fg-exp">
-          <label class="control-label" for="exp">Fecha de expiración</label>
-          <input type="text" class="form-control" id="exp" maxlength="5" placeholder="MM/AA">
-          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-        </div>
-        <button id="pay" type="button" class="btn btn-success col-md-12">Pagar</button>
-      </form>
-
     </div>
-  </div>
-
+  </section>
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
-          <p>Card-validator.js es una librería libremente distribuído</p>
+          <p class="text-center"><strong>© Card Validator - 2018</strong></p>
         </div>
       </div>
-
     </div>
   </footer>
-  <!-- Import jQuery -->
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
-  <!-- Import Bootstrap JS -->
   <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
   <script src="js/app.js"></script>
 </body>
-
 </html>

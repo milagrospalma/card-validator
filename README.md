@@ -1,21 +1,21 @@
 # Card Validator
-Valida datos como el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, codigo de verificación (cvv) y nombre completo que aparece en la tarjeta.
+Valida datos como el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, código de verificación (CVV) y nombre completo que aparece en la tarjeta.
 
 ![Vista Desktop](https://fotos.subefotos.com/942f349d7db0839ffa7607f2d2a0906bo.png)
 
 ## Desarrollado para [Laboratoria](http://laboratoria.la)
 
 ## ¿Cómo nos organizamos?
-Para la elaboración del presente proyecto se realizó la siguiente tabla donde definimos las actividades a realizar:
+Definimos las actividades a realizar:
 
 | N°  | Actividad |
 | ---------- | ---------- |
-| 1 | Elegir el reto                                             |
-| 2 | Hacer fork del reto modelo                                 |
-| 3 | Estructurar el proyecto e instalar la herramienta babel    |
-| 4 | Investigar acerca de las librerías                         |
-| 5 | Realizar el diseño del formulario en el index              |
-| 6 | Programar la funcionalidad en la versión ES6 de javascript |
+| 1 | Elección del reto                                          |
+| 2 | Fork del repositorio creado por Laboratoria                |
+| 3 | Estructuración el proyecto y uso de la herramienta Babel   |
+| 4 | Investigación sobre _librerías_                            |
+| 5 | Diseño y creación del formulario en `index.html`           |
+| 6 | Agregar funcionalidad en ECMAScript 6 (ES6)                |
 
 ## ¿Cómo funciona la librería?
 La librería debe recibir una referencia a un elemento del DOM que contenga `<input>`s con los siguientes nombres (atributo `name`):
@@ -25,26 +25,24 @@ La librería debe recibir una referencia a un elemento del DOM que contenga `<in
 * `cvv` (Card Verification Value): Código de validación de 3 dígitos
 * `exp` (Expiry Date): Fecha de expiración
 
-
-A la hora de hacer las validaciones, la librería añade la clase `.has-error` a los `<input>`s que no pasen la validación, o la clase `.has-success` en caso de que sí pase.
+Durante el proceso de validación, la librería añadirá la clase `.has-error` a los `<input>`s que no pasen la validación, o la clase `.has-success` en caso de que sí pase.
 
 ## ¿Cómo trabajar con la librería?
 Para fines prácticos de la implementación, indicamos las sguientes instrucciones:
 1. Fork al [repositorio](https://github.com/milagrospalma/card-validator)
-2. Cada input valida, por lo que las validaciones se presentan en funciones para que solo las llame cuando ocurre cierto evento. Un ejemplo sería este bloque de código que corresponde a una función:
-````
-  /*La función cardNumberLength tiene un parámetro de entrada inputValue*/
+2. A cada input le corresponde una validación distinta al resto. Las validaciones se presentan en funciones para que solo sean invocadas cuando ocurre cierto evento. Un ejemplo sería este bloque de código que corresponde a una función:
+```js
+  // La función cardNumberLength tiene un parámetro de entrada inputValue
   
   const cardNumberLength = inputValue => {
     if (inputValue.trim().length === 16) {
       return inputValue;
     }
   };
-````
-4. Tener en cuenta el Framework que se use. para este demo usamos Bootsrtap, que ya cuenta con las clases `.has-error` y
-`.has-success`.
+```
+3. Tener en cuenta el Framework CSS que se usará. En este ejemplo, usamos Bootstrap porque cuenta con las clases `.has-error` y `.has-success`.
 
-## Demo
+## Vista Formulario
 ![Demo](public/assets/docs/demo.png)
 
 ## Herramientas

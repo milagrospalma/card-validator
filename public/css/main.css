@@ -1,29 +1,24 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body{
+body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.mg-5{
+.mg-5 {
   margin: 5vh;
 }
 
 .navbar {
-  background: #ececec;
+  background: #ECECEC;
   margin-bottom: 0;
 }
 
 .navbar navbar-brand {
-  color: #ffffff;
+  color: #FFF;
 }
 
 .jumbotron {
   background: #1D3453;
-  color:  #ffffff;
+  color:  #FFF;
+  height: 60vh;
 }
 
 .text-size-version {
@@ -31,22 +26,44 @@ body{
 }
 
 .panel a {
-  color:#ffffff;
+  color: #FFF;
   text-decoration: none; 
 }
 
 form {
-  border: 1px solid #dddddd;
+  border: 1px solid #DDDDDD;
   box-shadow: 2px 3px 3px rgb(184, 182, 182);
   padding: 2vh;  
 }
 
 .line-height {
-  line-height: 2
+  line-height: 2;
 }
 
 footer {
-  background: #e2e1e1;
+  background: #E2E1E1;
   margin-top: 5vh;
   padding: 2vh;
+}
+
+img.logo {
+  height: 40px;
+  width: 30%;
+}
+
+img.logo-header {
+  height: 15em;
+}
+
+a.library {
+  color: #000;
+}
+
+a.library:hover {
+  color: #1D3453;
+  text-decoration-line: underline;
+}
+
+.vh85 {
+  height: 85vh;
 }
