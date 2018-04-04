@@ -18,7 +18,8 @@ body {
 .jumbotron {
   background: #1D3453;
   color:  #FFF;
-  height: 60vh;
+  height: 70vh;
+  padding-top: 7em;
 }
 
 .text-size-version {
@@ -42,7 +43,6 @@ form {
 
 footer {
   background: #E2E1E1;
-  margin-top: 5vh;
   padding: 2vh;
 }
 

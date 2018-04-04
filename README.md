@@ -1,7 +1,7 @@
 # Card Validator
 Valida datos como el número de tarjeta de crédito (usando algoritmo de Luhn), fecha de vencimiento, código de verificación (CVV) y nombre completo que aparece en la tarjeta.
 
-![Vista Desktop](https://fotos.subefotos.com/942f349d7db0839ffa7607f2d2a0906bo.png)
+![Vista Desktop](https://fotos.subefotos.com/613395f86faf32031c75f77e3e3eb7eeo.png)
 
 ## Desarrollado para [Laboratoria](http://laboratoria.la)
 
@@ -43,7 +43,7 @@ Para fines prácticos de la implementación, indicamos las sguientes instruccion
 3. Tener en cuenta el Framework CSS que se usará. En este ejemplo, usamos Bootstrap porque cuenta con las clases `.has-error` y `.has-success`.
 
 ## Vista Formulario
-![Demo](public/assets/docs/demo.png)
+![Demo](http://g.recordit.co/ijAwxua7y7.gif)
 
 ## Herramientas
 `HTML5` `CSS3` `JavaScript` `ECMAScript 6` `babel` `node.js` `Bootstrap`
